@@ -22,9 +22,8 @@ with open(filename,"r") as f:
 plt.plot(dates, NMHCs, color='r', label='NMHC')
 plt.plot(dates, fumes, color='g', label='fume')
 plt.plot(dates, PMs, color='b', label='PM')
-xlabel=[str(val)+'_1' for val in range(100,110)]
-ax = plt.gca()
-ax.set_xticklabels(xlabel)
+
 plt.legend()
 plt.xticks([])
+plt.yticks([])
 plt.show()
