@@ -13,8 +13,8 @@ import numpy as np
 
 warnings.filterwarnings("ignore")
 
-filename1 = r'data/(2023-02-21 22_49_18_2023-02-28 22_49_18).csv'
-filename2 = r'data/(2023-02-25 18_51_15_2023-03-04 18_51_15).csv'
+filename1 = r'data/(2023-02-20 00_00_00_2023-02-26 00_00_00).csv'
+filename2 = r'data/(2023-02-27 00_00_00_2023-03-05 00_00_00).csv'
 
 
 df_orig = pd.read_csv(filename2, usecols=[0, 2, 3, 4], skiprows=[
