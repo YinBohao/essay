@@ -1,37 +1,36 @@
-import time
-import csv
+import pandas as pd
 import matplotlib.pyplot as plt
-import os
 import sys
+import os
 os.chdir(sys.path[0])
 
-current_date = time.strftime("%Y-%m-%d-%H-%M-%S", time.localtime(time.time()))
-print(current_date)
-filename = r'data/(2023-02-21 22_49_18_2023-02-28 22_49_18).csv'
-with open(filename) as f:
-    reader = csv.reader(f)
-    for i, header_rows in enumerate(reader):
-        if i == 2:
-            header_row = header_rows
-    print(header_row)
+import matplotlib
+matplotlib.rc("font", family='Microsoft YaHei')
 
-    report_time = []
-    NMHCs = []
-    fumes = []
-    PMs = []
+filename = r'data/监测历史数据.xls'
+# 读取csv文件的0，2，3，4列，并且忽略其前两行表名，从列名所在行开始
+# df_orig = pd.read_csv(filename2, usecols=[0, 2, 3, 4], skiprows=[
+#                       0, 1], encoding='gbk')
 
-    for row in reader:
-        report_time.append(row[1])
-        NMHCs.append(row[3])
-        fumes.append(row[4])
-        PMs.append(row[5])
-# 根据数据绘制图形
-plt.title("air", fontsize=24)
-y = [NMHCs, fumes, PMs]
-cnames = ['NMHC', 'fume', 'PM']
-for a in range(3):
-    colors = ["blue", "red", "yellow"]
-    print(y[a])
-    plt.plot(report_time, y[a], color=colors[a], label=cnames[a])
-plt.xlabel('report_time')
+df_orig = pd.read_excel(
+    filename, usecols=[0, 6], nrows=8428, sheet_name='第一水质净化厂进水1')
+
+# df_orig.head(1000)
+
+# 将上报时间列的字符串数据类型转化成时间戳
+# df_orig['上报时间'] = pd.to_datetime(df_orig['上报时间'])
+df_orig['日期'] = pd.to_datetime(df_orig['日期'])
+# 将读取数据按每小时进行分组
+# df_data_hour = df_orig.groupby(pd.Grouper(key= '上报时间', axis=0, freq='H')).mean()
+df_data_hour = df_orig.groupby(pd.Grouper(key='日期', axis=0, freq='D')).mean()
+# 绘图
+# plt.figure(figsize=(10, 3))
+plt.boxplot(df_data_hour['cod'])
+# plt.plot(df_data_hour['nh3n'], color='g', label='nh3n')
+# plt.plot(df_data_hour['tn'], color='b', label='tn')
+# plt.plot(df_data_hour['tp'], color='y', label='tp')
+# plt.plot(df_data_hour['ph'], color='c', label='ph')
+
+# plt.xticks(rotation = 30)
+plt.legend()
 plt.show()
