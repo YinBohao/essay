@@ -34,3 +34,18 @@ plt.boxplot(df_data_hour['cod'])
 # plt.xticks(rotation = 30)
 plt.legend()
 plt.show()
+# 按天分组，箱型图
+# for name in df_boxplot.columns:
+#     if name not in ['日期', 'date']:
+#         fig, axs = plt.subplots(1, 1, figsize=(15, 8),sharex=True,sharey=True)
+#         seaborn.boxplot(y=name, x='date', data=df_boxplot,
+#                         flierprops={'marker': 'o',  # 异常值形状
+#                                     'markerfacecolor': 'red',  # 形状填充色
+#                                     'color': 'black',  # 形状外廓颜色
+#                                     },
+#                         showmeans=True,
+#                         meanline=True,)
+#         plt.xticks(rotation=45)
+#         # plt.show()
+
+# # group_name = [gn for gn in df_grouped.groups.keys()]
