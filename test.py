@@ -2,33 +2,33 @@ import torch
 import numpy as np
 import time
 
-X = torch.randn(20000, 20000)
-Y = torch.randn(20000, 20000)
-# start1 = time.time()
-# # numpy内积
-# Z = np.dot(X, Y)
-# end1 = time.time()
-# print (end1-start1)
+# X = torch.randn(20000, 20000)
+# Y = torch.randn(20000, 20000)
+# # start1 = time.time()
+# # # numpy内积
+# # Z = np.dot(X, Y)
+# # end1 = time.time()
+# # print (end1-start1)
 
-device = torch.device('cuda:0' )
-X = X.to(device)
-Y = Y.to(device)
+# device = torch.device('cuda:0' )
+# X = X.to(device)
+# Y = Y.to(device)
 
-start2 = time.time()
-# torch内积
-Z = X.mm(Y)
-print(Z.cuda().device)
-end2 = time.time()
-print (end2-start2)
+# start2 = time.time()
+# # torch内积
+# Z = X.mm(Y)
+# print(Z.cuda().device)
+# end2 = time.time()
+# print (end2-start2)
 
-# print('torch ',torch.__version__)
-# print(torch.cuda.device_count())
+print('torch ',torch.__version__)
+print(torch.cuda.device_count())
 
-# print('cuda ',torch.cuda.is_available(),torch.version.cuda)
+print('cuda ',torch.cuda.is_available(),torch.version.cuda)
 
-# print('cudnn ',torch.backends.cudnn.is_available()
-#       ,torch.backends.cudnn.version())
-# print(torch.cuda.get_device_name(0))         # 查看使用的设备名称
+print('cudnn ',torch.backends.cudnn.is_available()
+      ,torch.backends.cudnn.version())
+print(torch.cuda.get_device_name(0))         # 查看使用的设备名称
 
 # print(torch.cuda.get_arch_list())
 # import torch

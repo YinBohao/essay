@@ -1,171 +1,150 @@
 import torch
-import random
 import numpy as np
 import matplotlib.pyplot as plt
+from torchvision import datasets, transforms
 
-from IPython import display
-from d2l import torch as d2l
+import os
+import sys
+os.chdir(sys.path[0])
 
-# 输入数据集大小和维度，生成随机数据集
-size = 50
-dimension = 100
+
+import torch.nn as nn
+import torch.optim as optim
+from torch.utils.data import DataLoader, Dataset
+from torchvision import transforms, datasets
+import matplotlib.pyplot as plt
+from IPython.display import clear_output
+
+device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 # 设置超参数
-learning_rate = 1
-num_epochs = 20
-batch_size = 10
+learning_rate = 0.03
+batch_size = 256
+epochs = 20
 
-# 设置随机种子，保证结果可重现
-# torch.manual_seed(0)
-# random.seed(0)
+# 加载数据集
+# 定义数据变换
+transform = transforms.Compose(
+    [transforms.ToTensor(), transforms.Normalize([0.1307], [0.3081])])
 
-num_inputs = 784
-num_outputs = 10
+# 加载训练集, shuffle参数指定了是否对数据进行随机排序, 设置shuffle=True来打乱数据集，以便每个批次中包含的图像是随机的
+train_set = datasets.MNIST('data', train=True, transform=transform)
+train_loader = torch.utils.data.DataLoader(
+    train_set, batch_size=batch_size, shuffle=True)
 
-W = torch.normal(0, 0.01, size=(num_inputs, num_outputs), requires_grad=True)
-b = torch.zeros(num_outputs, requires_grad=True)
+# 加载测试集
+test_set = datasets.MNIST('data', train=False, transform=transform)
+test_loader = torch.utils.data.DataLoader(
+    test_set, batch_size=batch_size, shuffle=False)
 
-# 随机生成数据集
+# 定义单层神经网络，最后一层使用softmax激活函数，使之可以使用交叉熵损失函数进行训练
+class SoftmaxRegression(torch.nn.Module):
+    def __init__(self, input_dim, output_dim):
+        super().__init__()# 调用父类的init
+        self.fc1 = torch.nn.Linear(input_dim, output_dim)
 
-class Accumulator:  #@save
-    """在n个变量上累加"""
-    def __init__(self, n):
-        self.data = [0.0] * n
+    def forward(self, x):
+        x = x.view(-1, self.fc1.in_features)# 将输入图片展开为向量
+        x = torch.nn.functional.softmax(self.fc1(x), dim=1)
+        return x
 
-    def add(self, *args):
-        self.data = [a + float(b) for a, b in zip(self.data, args)]
+# 创建模型实例
+model = SoftmaxRegression(
+    input_dim=28 * 28, output_dim=10).to(device)
 
-    def reset(self):
-        self.data = [0.0] * len(self.data)
+# 定义损失函数和优化器, 使用交叉熵损失和随机梯度下降优化器
+criterion = torch.nn.CrossEntropyLoss().to(device)
+optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)
 
-    def __getitem__(self, idx):
-        return self.data[idx]
-
-def generate_dataset(num_samples, input_size):
-    # 随机生成输入张量
-    inputs = torch.randn(num_samples, input_size)
-
-    # 生成随机标签1,-1
-    labels = torch.randint(1,10,(num_samples,1))
-
-    return inputs, labels
-# print(generate_dataset(5,10))
-
-def softmax(X):
-    X_exp = torch.exp(X)
-    partition = X_exp.sum(1, keepdim=True)
-    return X_exp / partition  # 这里应用了广播机制
-
-def net(X):
-    return softmax(torch.matmul(X.reshape((-1, W.shape[0])), W) + b)
-
-# 损失函数
-def cross_entropy(y_hat, y):
-    return - torch.log(y_hat[range(len(y_hat)), y])
-
-
-def accuracy(y_hat, y):  #@save
-    """计算预测正确的数量"""
-    if len(y_hat.shape) > 1 and y_hat.shape[1] > 1:
-        y_hat = y_hat.argmax(axis=1)
-    cmp = y_hat.type(y.dtype) == y
-    return float(cmp.type(y.dtype).sum())
-
-
-def evaluate_accuracy(net, data_iter):  #@save
-    """计算在指定数据集上模型的精度"""
-    if isinstance(net, torch.nn.Module):
-        net.eval()  # 将模型设置为评估模式
-    metric = Accumulator(2)  # 正确预测数、预测总数
-    with torch.no_grad():
-        for X, y in data_iter:
-            metric.add(accuracy(net(X), y), y.numel())
-    return metric[0] / metric[1]
+def train(model, device, train_loader, loss_fn, optimizer, epoch):
+    model.train()
+    for batch_idx, (data, target) in enumerate(train_loader):
+        data, target = data.to(device), target.to(device)
+        optimizer.zero_grad()
+        output = model(data)
+        loss = loss_fn(output, target)
+        loss.backward()
+        optimizer.step()
+        if batch_idx % 100 == 0:
+            clear_output(wait=True)
+            print('Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
+                epoch, batch_idx * len(data), len(train_loader.dataset),
+                100. * batch_idx / len(train_loader), loss.item()))
+            plt.clf()
+            plt.imshow(data[0].cpu().view(28, 28), cmap='gray')
+            plt.title(f"Prediction: {output[0].argmax().item()}")
+            plt.pause(0.5)
 
 
 
-def train_epoch_ch3(net, train_iter, loss, updater):  #@save
-    """训练模型一个迭代周期（定义见第3章）"""
-    # 将模型设置为训练模式
-    if isinstance(net, torch.nn.Module):
-        net.train()
-    # 训练损失总和、训练准确度总和、样本数
-    metric = Accumulator(3)
-    for X, y in train_iter:
-        # 计算梯度并更新参数
-        y_hat = net(X)
-        l = loss(y_hat, y)
-        if isinstance(updater, torch.optim.Optimizer):
-            # 使用PyTorch内置的优化器和损失函数
-            updater.zero_grad()
-            l.mean().backward()
-            updater.step()
-        else:
-            # 使用定制的优化器和损失函数
-            l.sum().backward()
-            updater(X.shape[0])
-        metric.add(float(l.sum()), accuracy(y_hat, y), y.numel())
-    # 返回训练损失和训练精度
-    return metric[0] / metric[2], metric[1] / metric[2]
+if __name__ == '__main__':
+    for epoch in range(1, epochs + 1):
+        train(model, device, train_loader, criterion, optimizer, epoch)
 
-class Animator:  #@save
-    """在动画中绘制数据"""
-    def __init__(self, xlabel=None, ylabel=None, legend=None, xlim=None,
-                 ylim=None, xscale='linear', yscale='linear',
-                 fmts=('-', 'm--', 'g-.', 'r:'), nrows=1, ncols=1,
-                 figsize=(3.5, 2.5)):
-        # 增量地绘制多条线
-        if legend is None:
-            legend = []
-        d2l.use_svg_display()
-        self.fig, self.axes = d2l.plt.subplots(nrows, ncols, figsize=figsize)
-        if nrows * ncols == 1:
-            self.axes = [self.axes, ]
-        # 使用lambda函数捕获参数
-        self.config_axes = lambda: d2l.set_axes(
-            self.axes[0], xlabel, ylabel, xlim, ylim, xscale, yscale, legend)
-        self.X, self.Y, self.fmts = None, None, fmts
 
-    def add(self, x, y):
-        # 向图表中添加多个数据点
-        if not hasattr(y, "__len__"):
-            y = [y]
-        n = len(y)
-        if not hasattr(x, "__len__"):
-            x = [x] * n
-        if not self.X:
-            self.X = [[] for _ in range(n)]
-        if not self.Y:
-            self.Y = [[] for _ in range(n)]
-        for i, (a, b) in enumerate(zip(x, y)):
-            if a is not None and b is not None:
-                self.X[i].append(a)
-                self.Y[i].append(b)
-        self.axes[0].cla()
-        for x, y, fmt in zip(self.X, self.Y, self.fmts):
-            self.axes[0].plot(x, y, fmt)
-        self.config_axes()
-        display.display(self.fig)
-        display.clear_output(wait=True)
+# # 训练
+# losses = []  # 记录训练集损失
+# acces = []  # 记录训练集准确率
+# eval_losses = []  # 记录测试集损失
+# eval_acces = []  # 记录测试集准确率
+
+# for epoch in range(epochs):
+#     train_loss = 0
+#     train_acc = 0
+#     model.train()  # 指明接下来model进行的是训练过程
+#     # 动态修改参数学习率
+#     # if epoch % 5 == 0:
+#     #     optimizer.param_groups[0]['lr'] *= 0.9
+#     for img, label in train_loader:
+#         img, label = img.to(device), label.to(device)# 移动到GPU计算
+
+#         # 前向传播
+#         out = model(img)
+#         loss = criterion(out, label)
         
-def train_ch3(net, train_iter, test_iter, loss, num_epochs, updater):  #@save
-    """训练模型（定义见第3章）"""
-    animator = Animator(xlabel='epoch', xlim=[1, num_epochs], ylim=[0.3, 0.9],
-                        legend=['train loss', 'train acc', 'test acc'])
-    for epoch in range(num_epochs):
-        train_metrics = train_epoch_ch3(net, train_iter, loss, updater)
-        test_acc = evaluate_accuracy(net, test_iter)
-        animator.add(epoch + 1, train_metrics + (test_acc,))
-    train_loss, train_acc = train_metrics
-    assert train_loss < 0.5, train_loss
-    assert train_acc <= 1 and train_acc > 0.7, train_acc
-    assert test_acc <= 1 and test_acc > 0.7, test_acc
+#         # 反向传播
+#         optimizer.zero_grad()  # 清空上一轮的梯度
+#         loss.backward()  # 根据前向传播得到损失，再由损失反向传播求得各个梯度
+#         optimizer.step()  # 根据反向传播得到的梯度优化模型中的参数
 
+#         train_loss += loss.item()  # 所有批次损失的和
+        
+#         # 计算分类的准确率
+#         pred=torch.argmax(out,1)
+#         num_correct = (pred == label).sum().item()
+#         acc = num_correct / img.shape[0]  # 每一批样本的准确率
+#         train_acc += acc
 
-lr = 0.1
+#     losses.append(train_loss / len(train_loader))  # 所有样本平均损失
+#     acces.append(train_acc / len(train_loader))  # 所有样本的准确率
 
-def updater(batch_size):
-    return d2l.sgd([W, b], lr, batch_size)
+#     # 运用训练好的模型在测试集上检验效果
+#     eval_loss = 0
+#     eval_acc = 0
+#     model.eval()  # 指明接下来要进行模型测试（不需要反向传播）
+#     # with torch.no_grad():
+#     for img, label in test_loader:
+#         img, label = img.to(device), label.to(device)
+#         out = model(img)
+#         loss = criterion(out, label)
+        
+#         # 记录误差
+#         eval_loss += loss.item()
+        
+#         # 记录准确率
+#         pred=torch.argmax(out,1)
+#         num_correct = (pred == label).sum().item()
+#         acc = num_correct / img.shape[0]
+#         eval_acc += acc
 
-num_epochs = 10
-train_ch3(net, train_iter, test_iter, cross_entropy, num_epochs, updater)
+#     eval_losses.append(eval_loss / len(test_loader))
+#     eval_acces.append(eval_acc / len(test_loader))
+
+#     print('epoch: {}, Train Loss: {:.4f}, Train Acc: {:.4f}, Test Loss: {:.4f}, Test Acc: {:.4f}'
+#           .format(epoch, train_loss / len(train_loader), train_acc / len(train_loader),
+#                   eval_loss / len(test_loader), eval_acc / len(test_loader)))
+
+# plt.title('train loss')
+# plt.plot(np.arange(len(losses)), losses)
+# plt.legend(['Train Loss'], loc='best')
+# plt.show()
