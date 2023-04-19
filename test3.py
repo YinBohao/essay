@@ -1,14 +1,25 @@
-import torch
+import pandas as pd
+import os, sys
+os.chdir(sys.path[0])
 
-input_dim = 10
-output_dim = 10
+import matplotlib
+matplotlib.rc("font", family='Microsoft YaHei')
 
-linear = torch.nn.Linear(3, 5)
+filename = r'data/博贺新港厂数据/csv/博贺新港厂进水数据.csv'
 
-input = torch.randn(2,3)
+df = pd.read_csv(filename)
 
-output = linear(input)
+# 将上报时间列的字符串数据类型转化成时间戳
+df['data_time'] = pd.to_datetime(df['data_time'])
 
-print(input)
-print(linear)
-print(output)
+
+
+# %W 每年的第几周，把星期一做为第一天（值从0到53）
+# %U 第年的第几周，把星期日做为第一天（值从0到53）
+# %V 每年的第几周，使用基于周的年
+df['week'] = df['data_time'].dt.strftime('%V')
+
+df = df.sort_values(['data_time'])
+
+df.to_csv(r'data/博贺新港厂数据/csv/博贺新港厂进水数据1.csv',index=0)
+
