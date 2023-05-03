@@ -22,10 +22,11 @@ def re_series(grouped):
 # filename1 = r'../data/csv/黄岭镇水质净化厂进水数据_last_result.csv'
 # filename2 = r'../data/csv/黄岭镇水质净化厂进水数据_mean_result.csv'
 # filename3 = r'../data/csv/水口镇水质净化厂进水数据_result.csv'
-filename = r'../data/博贺新港厂数据/csv/博贺新港厂进水数据_init.csv'
+filename = r'../data/博贺新港厂数据/csv/博贺新港厂进水数据_init_drop.csv'
 df_boxplot = pd.read_csv(filename)
 
 df_boxplot = df_boxplot.sort_values(['data_time'], ascending=False)
+# df_boxplot = df_boxplot.sort_values(['hour'], ascending=True)
 
 # df_boxplot['week'] = pd.to_datetime(df_boxplot['week']).dt.strftime('%Y-%m-%d')
 
@@ -113,7 +114,7 @@ plt.yticks(size=font_size)
 plt.ylabel('COD', fontsize=title_size)
 plt.xlabel(name, fontsize=title_size)
 
-plt.savefig(r'D:\实习\essay\figure\博贺新港厂进水数据\figure_' + name,pad_inches = 0.5,dpi =200)
+plt.savefig(r'D:\实习\essay\figure\博贺新港厂进水数据\figure1_' + name,pad_inches = 0.5,dpi =200)
 # ,bbox_inches = 'tight'
 plt.close()
 # plt.show()
