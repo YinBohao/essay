@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.1)  3 APR 2023 20:09
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.1)  4 MAY 2023 20:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -76,15 +76,171 @@ LaTeX Font Warning: Font shape `TU/ptm/bx/it' undefined
 \IEEEPARstartletwidth=\dimen163
 \c@IEEEbiography=\count195
 \@IEEEtranrubishbin=\box52
+) (d:/PF/texlive/2023/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2022/04/08 v2.17n AMS math features
+\@mathmargin=\skip51
+
+For additional information on amsmath, use the `?' option.
+(d:/PF/texlive/2023/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+ (d:/PF/texlive/2023/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks17
+\ex@=\dimen164
+)) (d:/PF/texlive/2023/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen165
+) (d:/PF/texlive/2023/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count196
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count197
+\leftroot@=\count198
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count199
+\DOTSCASE@=\count266
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box53
+\strutbox@=\box54
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen166
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count267
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count268
+\dotsspace@=\muskip16
+\c@parentequation=\count269
+\dspbrk@lvl=\count270
+\tag@help=\toks18
+\row@=\count271
+\column@=\count272
+\maxfields@=\count273
+\andhelp@=\toks19
+\eqnshift@=\dimen167
+\alignsep@=\dimen168
+\tagshift@=\dimen169
+\tagwidth@=\dimen170
+\totwidth@=\dimen171
+\lineht@=\dimen172
+\@envbody=\toks20
+\multlinegap=\skip52
+\multlinetaggap=\skip53
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+) (d:/PF/texlive/2023/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+) (d:/PF/texlive/2023/texmf-dist/tex/latex/algorithms/algorithmic.sty
+Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+ (d:/PF/texlive/2023/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+) (d:/PF/texlive/2023/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks22
+)
+\c@ALC@unique=\count274
+\c@ALC@line=\count275
+\c@ALC@rem=\count276
+\c@ALC@depth=\count277
+\ALC@tlm=\skip54
+\algorithmicindent=\skip55
+) (d:/PF/texlive/2023/texmf-dist/tex/latex/tools/array.sty
+Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen173
+\ar@mcellbox=\box55
+\extrarowheight=\dimen174
+\NC@list=\toks23
+\extratabsurround=\skip56
+\backup@length=\skip57
+\ar@cellbox=\box56
+) (d:/PF/texlive/2023/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+ (d:/PF/texlive/2023/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/03/12 v2.4 caption3 kernel (AR)
+\caption@tempdima=\dimen175
+\captionmargin=\dimen176
+\caption@leftmargin=\dimen177
+\caption@rightmargin=\dimen178
+\caption@width=\dimen179
+\caption@indent=\dimen180
+\caption@parindent=\dimen181
+\caption@hangindent=\dimen182
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+Package caption Info: \@makecaption = \long macro:#1#2->\ifx \@captype \@IEEEtablestring \footnotesize \bgroup \par \centering \@IEEEtabletopskipstrut {\normalfont \footnotesize #1}\\{\normalfont \footnotesize \scshape #2}\par \addvspace {0.5\baselineskip }\egroup \@IEEEtablecaptionsepspace \else \@IEEEfigurecaptionsepspace \setbox \@tempboxa \hbox {\normalfont \footnotesize {#1.}\nobreakspace \nobreakspace #2}\ifdim \wd \@tempboxa >\hsize \setbox \@tempboxa \hbox {\normalfont \footnotesize {#1.}\nobreakspace \nobreakspace }\parbox [t]{\hsize }{\normalfont \footnotesize \noindent \unhbox \@tempboxa #2}\else \ifCLASSOPTIONconference \hbox to\hsize {\normalfont \footnotesize \hfil \box \@tempboxa \hfil }\else \hbox to\hsize {\normalfont \footnotesize \box \@tempboxa \hfil }\fi \fi \fi  on input line 1176.
+)
+\c@KVtest=\count278
+\sf@farskip=\skip58
+\sf@captopadj=\dimen183
+\sf@capskip=\skip59
+\sf@nearskip=\skip60
+\c@subfigure=\count279
+\c@subfigure@save=\count280
+\c@lofdepth=\count281
+\c@subtable=\count282
+\c@subtable@save=\count283
+\c@lotdepth=\count284
+\sf@top=\skip61
+\sf@bottom=\skip62
+) (d:/PF/texlive/2023/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+) (d:/PF/texlive/2023/texmf-dist/tex/latex/sttools/stfloats.sty
+Package: stfloats 2017/03/27 v3.3 Improve float mechanism and baselineskip settings
+\@dblbotnum=\count285
+\c@dblbotnumber=\count286
+) (d:/PF/texlive/2023/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+) (d:/PF/texlive/2023/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2022-07-02 v1.5u LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks24
+\verbatim@line=\toks25
+\verbatim@in@stream=\read2
+) (d:/PF/texlive/2023/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (d:/PF/texlive/2023/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (d:/PF/texlive/2023/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (d:/PF/texlive/2023/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 107.
+ (d:/PF/texlive/2023/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
+))
+\Gin@req@height=\dimen184
+\Gin@req@width=\dimen185
+) (d:/PF/texlive/2023/texmf-dist/tex/latex/preprint/balance.sty
+Package: balance 1999/02/23 4.3 (PWD)
+\oldvsize=\dimen186
 ) (d:/PF/texlive/2023/texmf-dist/tex/latex/ctex/ctex.sty (d:/PF/texlive/2023/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2023-02-22 L3 programming layer (loader) 
  (d:/PF/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
 File: l3backend-xetex.def 2023-01-16 L3 backend support: XeTeX
-\g__graphics_track_int=\count196
-\l__pdf_internal_box=\box53
-\g__pdf_backend_object_int=\count197
-\g__pdf_backend_annotation_int=\count198
-\g__pdf_backend_link_int=\count199
+\g__graphics_track_int=\count287
+\l__pdf_internal_box=\box57
+\g__pdf_backend_object_int=\count288
+\g__pdf_backend_annotation_int=\count289
+\g__pdf_backend_link_int=\count290
 ))
 Package: ctex 2022/07/14 v2.5.10 Chinese adapter in LaTeX (CTEX)
  (d:/PF/texlive/2023/texmf-dist/tex/latex/ctex/ctexhook.sty
@@ -97,11 +253,11 @@ Package: fix-cm 2020/11/24 v1.1t fixes to LaTeX
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
 ))
-\l__ctex_tmp_int=\count266
-\l__ctex_tmp_box=\box54
-\l__ctex_tmp_dim=\dimen164
-\g__ctex_section_depth_int=\count267
-\g__ctex_font_size_int=\count268
+\l__ctex_tmp_int=\count291
+\l__ctex_tmp_box=\box58
+\l__ctex_tmp_dim=\dimen187
+\g__ctex_section_depth_int=\count292
+\g__ctex_font_size_int=\count293
  (d:/PF/texlive/2023/texmf-dist/tex/latex/ctex/config/ctexopts.cfg
 File: ctexopts.cfg 2022/07/14 v2.5.10 Option configuration file (CTEX)
 ) (d:/PF/texlive/2023/texmf-dist/tex/latex/ctex/engine/ctex-engine-xetex.def
@@ -110,18 +266,18 @@ File: ctex-engine-xetex.def 2022/07/14 v2.5.10 XeLaTeX adapter (CTEX)
 Package: xeCJK 2022/08/05 v3.9.1 Typesetting CJK scripts with XeLaTeX
  (d:/PF/texlive/2023/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.sty
 Package: xtemplate 2023-02-02 L3 Experimental prototype document functions
-\l__xtemplate_tmp_dim=\dimen165
-\l__xtemplate_tmp_int=\count269
-\l__xtemplate_tmp_muskip=\muskip16
-\l__xtemplate_tmp_skip=\skip51
+\l__xtemplate_tmp_dim=\dimen188
+\l__xtemplate_tmp_int=\count294
+\l__xtemplate_tmp_muskip=\muskip18
+\l__xtemplate_tmp_skip=\skip63
 )
-\l__xeCJK_tmp_int=\count270
-\l__xeCJK_tmp_box=\box55
-\l__xeCJK_tmp_dim=\dimen166
-\l__xeCJK_tmp_skip=\skip52
-\g__xeCJK_space_factor_int=\count271
-\l__xeCJK_begin_int=\count272
-\l__xeCJK_end_int=\count273
+\l__xeCJK_tmp_int=\count295
+\l__xeCJK_tmp_box=\box59
+\l__xeCJK_tmp_dim=\dimen189
+\l__xeCJK_tmp_skip=\skip64
+\g__xeCJK_space_factor_int=\count296
+\l__xeCJK_begin_int=\count297
+\l__xeCJK_end_int=\count298
 \c__xeCJK_CJK_class_int=\XeTeXcharclass1
 \c__xeCJK_FullLeft_class_int=\XeTeXcharclass2
 \c__xeCJK_FullRight_class_int=\XeTeXcharclass3
@@ -130,84 +286,84 @@ Package: xtemplate 2023-02-02 L3 Experimental prototype document functions
 \c__xeCJK_NormalSpace_class_int=\XeTeXcharclass6
 \c__xeCJK_CM_class_int=\XeTeXcharclass7
 \c__xeCJK_HangulJamo_class_int=\XeTeXcharclass8
-\l__xeCJK_last_skip=\skip53
-\c__xeCJK_none_node=\count274
-\g__xeCJK_node_int=\count275
-\c__xeCJK_CJK_node_dim=\dimen167
-\c__xeCJK_CJK-space_node_dim=\dimen168
-\c__xeCJK_default_node_dim=\dimen169
-\c__xeCJK_CJK-widow_node_dim=\dimen170
-\c__xeCJK_normalspace_node_dim=\dimen171
-\c__xeCJK_default-space_node_skip=\skip54
-\l__xeCJK_ccglue_skip=\skip55
-\l__xeCJK_ecglue_skip=\skip56
-\l__xeCJK_punct_kern_skip=\skip57
-\l__xeCJK_indent_box=\box56
-\l__xeCJK_last_penalty_int=\count276
-\l__xeCJK_last_bound_dim=\dimen172
-\l__xeCJK_last_kern_dim=\dimen173
-\l__xeCJK_widow_penalty_int=\count277
+\l__xeCJK_last_skip=\skip65
+\c__xeCJK_none_node=\count299
+\g__xeCJK_node_int=\count300
+\c__xeCJK_CJK_node_dim=\dimen190
+\c__xeCJK_CJK-space_node_dim=\dimen191
+\c__xeCJK_default_node_dim=\dimen192
+\c__xeCJK_CJK-widow_node_dim=\dimen193
+\c__xeCJK_normalspace_node_dim=\dimen194
+\c__xeCJK_default-space_node_skip=\skip66
+\l__xeCJK_ccglue_skip=\skip67
+\l__xeCJK_ecglue_skip=\skip68
+\l__xeCJK_punct_kern_skip=\skip69
+\l__xeCJK_indent_box=\box60
+\l__xeCJK_last_penalty_int=\count301
+\l__xeCJK_last_bound_dim=\dimen195
+\l__xeCJK_last_kern_dim=\dimen196
+\l__xeCJK_widow_penalty_int=\count302
 
 Package xtemplate Info: Declaring object type 'xeCJK/punctuation' taking 0
 (xtemplate)             argument(s) on line 2396.
 
-\l__xeCJK_fixed_punct_width_dim=\dimen174
-\l__xeCJK_mixed_punct_width_dim=\dimen175
-\l__xeCJK_middle_punct_width_dim=\dimen176
-\l__xeCJK_fixed_margin_width_dim=\dimen177
-\l__xeCJK_mixed_margin_width_dim=\dimen178
-\l__xeCJK_middle_margin_width_dim=\dimen179
-\l__xeCJK_bound_punct_width_dim=\dimen180
-\l__xeCJK_bound_margin_width_dim=\dimen181
-\l__xeCJK_margin_minimum_dim=\dimen182
-\l__xeCJK_kerning_total_width_dim=\dimen183
-\l__xeCJK_same_align_margin_dim=\dimen184
-\l__xeCJK_different_align_margin_dim=\dimen185
-\l__xeCJK_kerning_margin_width_dim=\dimen186
-\l__xeCJK_kerning_margin_minimum_dim=\dimen187
-\l__xeCJK_bound_dim=\dimen188
-\l__xeCJK_reverse_bound_dim=\dimen189
-\l__xeCJK_margin_dim=\dimen190
-\l__xeCJK_minimum_bound_dim=\dimen191
-\l__xeCJK_kerning_margin_dim=\dimen192
-\g__xeCJK_family_int=\count278
-\l__xeCJK_fam_int=\count279
-\g__xeCJK_fam_allocation_int=\count280
-\l__xeCJK_verb_case_int=\count281
-\l__xeCJK_verb_exspace_skip=\skip58
+\l__xeCJK_fixed_punct_width_dim=\dimen197
+\l__xeCJK_mixed_punct_width_dim=\dimen198
+\l__xeCJK_middle_punct_width_dim=\dimen199
+\l__xeCJK_fixed_margin_width_dim=\dimen256
+\l__xeCJK_mixed_margin_width_dim=\dimen257
+\l__xeCJK_middle_margin_width_dim=\dimen258
+\l__xeCJK_bound_punct_width_dim=\dimen259
+\l__xeCJK_bound_margin_width_dim=\dimen260
+\l__xeCJK_margin_minimum_dim=\dimen261
+\l__xeCJK_kerning_total_width_dim=\dimen262
+\l__xeCJK_same_align_margin_dim=\dimen263
+\l__xeCJK_different_align_margin_dim=\dimen264
+\l__xeCJK_kerning_margin_width_dim=\dimen265
+\l__xeCJK_kerning_margin_minimum_dim=\dimen266
+\l__xeCJK_bound_dim=\dimen267
+\l__xeCJK_reverse_bound_dim=\dimen268
+\l__xeCJK_margin_dim=\dimen269
+\l__xeCJK_minimum_bound_dim=\dimen270
+\l__xeCJK_kerning_margin_dim=\dimen271
+\g__xeCJK_family_int=\count303
+\l__xeCJK_fam_int=\count304
+\g__xeCJK_fam_allocation_int=\count305
+\l__xeCJK_verb_case_int=\count306
+\l__xeCJK_verb_exspace_skip=\skip70
  (d:/PF/texlive/2023/texmf-dist/tex/latex/fontspec/fontspec.sty (d:/PF/texlive/2023/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2023-02-02 L3 Experimental document command parser
 )
 Package: fontspec 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
  (d:/PF/texlive/2023/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
 Package: fontspec-xetex 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
-\l__fontspec_script_int=\count282
-\l__fontspec_language_int=\count283
-\l__fontspec_strnum_int=\count284
-\l__fontspec_tmp_int=\count285
-\l__fontspec_tmpa_int=\count286
-\l__fontspec_tmpb_int=\count287
-\l__fontspec_tmpc_int=\count288
-\l__fontspec_em_int=\count289
-\l__fontspec_emdef_int=\count290
-\l__fontspec_strong_int=\count291
-\l__fontspec_strongdef_int=\count292
-\l__fontspec_tmpa_dim=\dimen193
-\l__fontspec_tmpb_dim=\dimen194
-\l__fontspec_tmpc_dim=\dimen195
+\l__fontspec_script_int=\count307
+\l__fontspec_language_int=\count308
+\l__fontspec_strnum_int=\count309
+\l__fontspec_tmp_int=\count310
+\l__fontspec_tmpa_int=\count311
+\l__fontspec_tmpb_int=\count312
+\l__fontspec_tmpc_int=\count313
+\l__fontspec_em_int=\count314
+\l__fontspec_emdef_int=\count315
+\l__fontspec_strong_int=\count316
+\l__fontspec_strongdef_int=\count317
+\l__fontspec_tmpa_dim=\dimen272
+\l__fontspec_tmpb_dim=\dimen273
+\l__fontspec_tmpc_dim=\dimen274
  (d:/PF/texlive/2023/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 ) (d:/PF/texlive/2023/texmf-dist/tex/latex/fontspec/fontspec.cfg))) (d:/PF/texlive/2023/texmf-dist/tex/xelatex/xecjk/xeCJK.cfg
 File: xeCJK.cfg 2022/08/05 v3.9.1 Configuration file for xeCJK package
 ))
-\ccwd=\dimen196
-\l__ctex_ccglue_skip=\skip59
+\ccwd=\dimen275
+\l__ctex_ccglue_skip=\skip71
 )
-\l__ctex_ziju_dim=\dimen197
+\l__ctex_ziju_dim=\dimen276
  (d:/PF/texlive/2023/texmf-dist/tex/latex/zhnumber/zhnumber.sty
 Package: zhnumber 2022/07/14 v3.0 Typesetting numbers with Chinese glyphs
-\l__zhnum_scale_int=\count293
-\l__zhnum_tmp_int=\count294
+\l__zhnum_scale_int=\count318
+\l__zhnum_tmp_int=\count319
  (d:/PF/texlive/2023/texmf-dist/tex/latex/zhnumber/zhnumber-utf8.cfg
 File: zhnumber-utf8.cfg 2022/07/14 v3.0 Chinese numerals with UTF8 encoding
 )) (d:/PF/texlive/2023/texmf-dist/tex/latex/ctex/scheme/ctex-scheme-chinese.def
@@ -250,162 +406,6 @@ Package fontspec Info: Font family 'SimSun(0)' created for font 'SimSun' with
 
 )) (d:/PF/texlive/2023/texmf-dist/tex/latex/ctex/config/ctex.cfg
 File: ctex.cfg 2022/07/14 v2.5.10 Configuration file (CTEX)
-) (d:/PF/texlive/2023/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2022/04/08 v2.17n AMS math features
-\@mathmargin=\skip60
-
-For additional information on amsmath, use the `?' option.
-(d:/PF/texlive/2023/texmf-dist/tex/latex/amsmath/amstext.sty
-Package: amstext 2021/08/26 v2.01 AMS text
- (d:/PF/texlive/2023/texmf-dist/tex/latex/amsmath/amsgen.sty
-File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks17
-\ex@=\dimen198
-)) (d:/PF/texlive/2023/texmf-dist/tex/latex/amsmath/amsbsy.sty
-Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen199
-) (d:/PF/texlive/2023/texmf-dist/tex/latex/amsmath/amsopn.sty
-Package: amsopn 2022/04/08 v2.04 operator names
-)
-\inf@bad=\count295
-LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count296
-\leftroot@=\count297
-LaTeX Info: Redefining \overline on input line 399.
-LaTeX Info: Redefining \colon on input line 410.
-\classnum@=\count298
-\DOTSCASE@=\count299
-LaTeX Info: Redefining \ldots on input line 496.
-LaTeX Info: Redefining \dots on input line 499.
-LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box57
-\strutbox@=\box58
-LaTeX Info: Redefining \big on input line 722.
-LaTeX Info: Redefining \Big on input line 723.
-LaTeX Info: Redefining \bigg on input line 724.
-LaTeX Info: Redefining \Bigg on input line 725.
-\big@size=\dimen256
-LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count300
-LaTeX Info: Redefining \bmod on input line 905.
-LaTeX Info: Redefining \pmod on input line 910.
-LaTeX Info: Redefining \smash on input line 940.
-LaTeX Info: Redefining \relbar on input line 970.
-LaTeX Info: Redefining \Relbar on input line 971.
-\c@MaxMatrixCols=\count301
-\dotsspace@=\muskip17
-\c@parentequation=\count302
-\dspbrk@lvl=\count303
-\tag@help=\toks18
-\row@=\count304
-\column@=\count305
-\maxfields@=\count306
-\andhelp@=\toks19
-\eqnshift@=\dimen257
-\alignsep@=\dimen258
-\tagshift@=\dimen259
-\tagwidth@=\dimen260
-\totwidth@=\dimen261
-\lineht@=\dimen262
-\@envbody=\toks20
-\multlinegap=\skip61
-\multlinetaggap=\skip62
-\mathdisplay@stack=\toks21
-LaTeX Info: Redefining \[ on input line 2953.
-LaTeX Info: Redefining \] on input line 2954.
-) (d:/PF/texlive/2023/texmf-dist/tex/latex/amsfonts/amsfonts.sty
-Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\symAMSa=\mathgroup4
-\symAMSb=\mathgroup5
-LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
-LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-) (d:/PF/texlive/2023/texmf-dist/tex/latex/algorithms/algorithmic.sty
-Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
-Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
- (d:/PF/texlive/2023/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
-) (d:/PF/texlive/2023/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
-\KV@toks@=\toks22
-)
-\c@ALC@unique=\count307
-\c@ALC@line=\count308
-\c@ALC@rem=\count309
-\c@ALC@depth=\count310
-\ALC@tlm=\skip63
-\algorithmicindent=\skip64
-) (d:/PF/texlive/2023/texmf-dist/tex/latex/tools/array.sty
-Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
-\col@sep=\dimen263
-\ar@mcellbox=\box59
-\extrarowheight=\dimen264
-\NC@list=\toks23
-\extratabsurround=\skip65
-\backup@length=\skip66
-\ar@cellbox=\box60
-) (d:/PF/texlive/2023/texmf-dist/tex/latex/subfig/subfig.sty
-Package: subfig 2005/06/28 ver: 1.3 subfig package
- (d:/PF/texlive/2023/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2023/03/12 v2.4 caption3 kernel (AR)
-\caption@tempdima=\dimen265
-\captionmargin=\dimen266
-\caption@leftmargin=\dimen267
-\caption@rightmargin=\dimen268
-\caption@width=\dimen269
-\caption@indent=\dimen270
-\caption@parindent=\dimen271
-\caption@hangindent=\dimen272
-Package caption Info: Unknown document class (or package),
-(caption)             standard defaults will be used.
-Package caption Info: \@makecaption = \long macro:#1#2->\ifx \@captype \@IEEEtablestring \footnotesize \bgroup \par \centering \@IEEEtabletopskipstrut {\normalfont \footnotesize #1}\\{\normalfont \footnotesize \scshape #2}\par \addvspace {0.5\baselineskip }\egroup \@IEEEtablecaptionsepspace \else \@IEEEfigurecaptionsepspace \setbox \@tempboxa \hbox {\normalfont \footnotesize {#1.}\nobreakspace \nobreakspace #2}\ifdim \wd \@tempboxa >\hsize \setbox \@tempboxa \hbox {\normalfont \footnotesize {#1.}\nobreakspace \nobreakspace }\parbox [t]{\hsize }{\normalfont \footnotesize \noindent \unhbox \@tempboxa #2}\else \ifCLASSOPTIONconference \hbox to\hsize {\normalfont \footnotesize \hfil \box \@tempboxa \hfil }\else \hbox to\hsize {\normalfont \footnotesize \box \@tempboxa \hfil }\fi \fi \fi  on input line 1176.
-)
-\c@KVtest=\count311
-\sf@farskip=\skip67
-\sf@captopadj=\dimen273
-\sf@capskip=\skip68
-\sf@nearskip=\skip69
-\c@subfigure=\count312
-\c@subfigure@save=\count313
-\c@lofdepth=\count314
-\c@subtable=\count315
-\c@subtable@save=\count316
-\c@lotdepth=\count317
-\sf@top=\skip70
-\sf@bottom=\skip71
-) (d:/PF/texlive/2023/texmf-dist/tex/latex/base/textcomp.sty
-Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
-) (d:/PF/texlive/2023/texmf-dist/tex/latex/sttools/stfloats.sty
-Package: stfloats 2017/03/27 v3.3 Improve float mechanism and baselineskip settings
-\@dblbotnum=\count318
-\c@dblbotnumber=\count319
-) (d:/PF/texlive/2023/texmf-dist/tex/latex/url/url.sty
-\Urlmuskip=\muskip18
-Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-) (d:/PF/texlive/2023/texmf-dist/tex/latex/tools/verbatim.sty
-Package: verbatim 2022-07-02 v1.5u LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks24
-\verbatim@line=\toks25
-\verbatim@in@stream=\read2
-) (d:/PF/texlive/2023/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
- (d:/PF/texlive/2023/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
- (d:/PF/texlive/2023/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
-) (d:/PF/texlive/2023/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
-File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
-)
-Package graphics Info: Driver file: xetex.def on input line 107.
- (d:/PF/texlive/2023/texmf-dist/tex/latex/graphics-def/xetex.def
-File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
-))
-\Gin@req@height=\dimen274
-\Gin@req@width=\dimen275
-) (d:/PF/texlive/2023/texmf-dist/tex/latex/preprint/balance.sty
-Package: balance 1999/02/23 4.3 (PWD)
-\oldvsize=\dimen276
 )
 
 LaTeX Warning: Unused global option(s):
@@ -432,6 +432,9 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
 LaTeX Font Info:    ... okay on input line 16.
 
 -- Lines per column: 42 (approximate, difference = 9.90047pt).
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
 
 Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
 (fontspec)             this).
@@ -488,208 +491,42 @@ LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 16.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 16.
-Package caption Info: Begin \AtBeginDocument code.
-Package caption Info: subfig package v1.3 is loaded.
-Package caption Info: End \AtBeginDocument code.
 
 LaTeX Font Warning: Font shape `TU/SimSun(0)/b/it' undefined
-(Font)              using `TU/SimSun(0)/b/n' instead on input line 24.
+(Font)              using `TU/SimSun(0)/b/n' instead on input line 22.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 25.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 23.
 (d:/PF/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 25.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 23.
  (d:/PF/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-
-Package fontspec Info: Could not resolve font "FangSong/BI" (it probably
-(fontspec)             doesn't exist).
-
-
-Package fontspec Info: Could not resolve font "FangSong/B" (it probably
-(fontspec)             doesn't exist).
+File: fig1.png Graphic file (type bmp)
+<fig1.png>
 
 
-Package fontspec Info: Could not resolve font "FangSong/I" (it probably
-(fontspec)             doesn't exist).
-
-
-Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
-(fontspec)             with options [Script={CJK}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"FangSong/OT:script=hani;language=dflt;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 49--50
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 51--52
-
- []
-
-
-Overfull \hbox (11.19592pt too wide) in paragraph at lines 53--54
-[]$\OMS/cmsy/m/n/10.53937 n$\TU/lmtt/m/n/10.53937 documentclass[10pt,journal,compsoc]IEEEtran 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 53--54
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--56
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 57--58
-
- []
+LaTeX Font Warning: Font shape `TU/SimSun(0)/m/sc' undefined
+(Font)              using `TU/SimSun(0)/m/n' instead on input line 55.
 
 [1
 
 
-]
-Underfull \hbox (badness 2142) in paragraph at lines 88--90
-\TU/lmr/m/n/10.53937 identify IEEE membership status. Please see the
- []
+] [2
 
-[2]
-Underfull \hbox (badness 3884) in paragraph at lines 131--132
-\TU/lmr/m/n/10.53937 Section headings use standard L[]T[]X commands:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 146--147
-
- []
-
-File: fig1.png Graphic file (type bmp)
-<fig1.png>
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 242--243
-
- []
-
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 324--325
-
- []
-
-[5]
-Underfull \hbox (badness 1688) in paragraph at lines 413--414
-\TU/lmr/m/n/10.53937 las have been developed to \TU/lmr/bx/n/10.53937 provide uniformity
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 424--425
-[]\TU/lmr/m/n/10.53937 AMS-StyleGuide-online.pdf, published by the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 427--428
-[]\TU/lmr/m/n/10.53937 Further examples can be seen at $[][][][] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 427--428
-[] [] [][][][][][][][] [] [][][][][][][][][][][][][][][][] [] [][][][] [] [][][] [] [][][][][][][][][][][] []
- []
-
-
-Underfull \hbox (badness 4569) in paragraph at lines 451--453
-\TU/lmr/bx/n/10.53937 Consecutive Numbering: \TU/lmr/m/n/10.53937 Equations within an
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 451--453
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 454--456
-\TU/lmr/bx/n/10.53937 Appendix Equations: \TU/lmr/m/n/10.53937 The continuation of
- []
-
-
-Underfull \hbox (badness 3323) in paragraph at lines 454--456
-\TU/lmr/m/n/10.53937 consecutively numbered equations is best in the
- []
-
-
-Underfull \hbox (badness 1845) in paragraph at lines 454--456
-\TU/lmr/m/n/10.53937 Appendix, but numbering as (A1), (A2), etc., is
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 454--456
-
- []
-
-[6] [7] [8]
-Underfull \hbox (badness 1515) in paragraph at lines 722--723
-\TU/lmr/m/n/10.53937 Avoid the use of outdated environments, such as
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 724--725
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 729--730
-
- []
-
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 764--769
-[]\TU/lmr/m/n/10.53937 Please use “soft” (e.g., [][]\TU/lmtt/m/n/10.53937 \eqref{Eq}[]\TU/lmr/m/n/10.53937 ) or
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 764--769
-[][]\TU/lmtt/m/n/10.53937 (\ref{Eq}) []\TU/lmr/m/n/10.53937 cross references instead of “hard”
- []
-
-
-Underfull \hbox (badness 1688) in paragraph at lines 764--769
-\TU/lmr/m/n/10.53937 references (e.g., [][]\TU/lmtt/m/n/10.53937 (1)[]\TU/lmr/m/n/10.53937 ). That will make it possible
- []
-
-
-LaTeX Font Warning: Font shape `TU/SimSun(0)/m/sc' undefined
-(Font)              using `TU/SimSun(0)/m/n' instead on input line 806.
-
-[10]
-File: fig1.png Graphic file (type bmp)
-<fig1.png>
-File: fig1.png Graphic file (type bmp)
-<fig1.png>
- [11] (./New_IEEEtran_how-to.aux)
+] (./New_IEEEtran_how-to.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 9855 strings out of 476683
- 254181 string characters out of 5806253
- 1873012 words of memory out of 5000000
- 29895 multiletter control sequences out of 15000+600000
- 522052 words of font info for 142 fonts, out of 8000000 for 9000
- 1352 hyphenation exceptions out of 8191
- 89i,12n,97p,798b,873s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 9830 strings out of 476683
+ 254205 string characters out of 5806253
+ 1870012 words of memory out of 5000000
+ 29887 multiletter control sequences out of 15000+600000
+ 521988 words of font info for 134 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 89i,6n,97p,798b,352s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on New_IEEEtran_how-to.pdf (11 pages).
+Output written on New_IEEEtran_how-to.pdf (2 pages).

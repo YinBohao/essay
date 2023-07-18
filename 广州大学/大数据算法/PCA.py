@@ -79,58 +79,53 @@ img_tsne_3d = tsne_model.fit_transform(img_tensor.cpu().numpy())
 
 import matplotlib.pyplot as plt
 
-# 将降维结果可视化为2D图形
-def plot_2d(X, y, title):
-    fig = plt.figure(figsize=(8, 8))
-    ax = fig.add_subplot(1, 1, 1)
-    ax.set_xlabel('Component 1')
-    ax.set_ylabel('Component 2')
-    ax.set_title(title)
-    targets = np.unique(y)
-    for target in targets:
-        indices = np.where(y == target)
-        ax.scatter(X[indices, 0], X[indices, 1], label=target)
-    ax.legend()
-    plt.show()
+# # 将降维结果可视化为2D图形
+# def plot_2d(X, y, title):
+#     fig = plt.figure(figsize=(8, 8))
+#     ax = fig.add_subplot(1, 1, 1)
+#     # ax.set_xlabel('Component 1')
+#     # ax.set_ylabel('Component 2')
+#     ax.set_title(title)
+#     targets = np.unique(y)
+#     for target in targets:
+#         indices = np.where(y == target)
+#         ax.scatter(X[indices, 0], X[indices, 1], label=target)
+#     ax.legend()
+#     plt.show()
 
-# 将降维结果可视化为3D图形
-def plot_3d(X, y, title):
-    fig = plt.figure(figsize=(8, 8))
-    ax = fig.add_subplot(1, 1, 1, projection='3d')
-    ax.set_xlabel('Component 1')
-    ax.set_ylabel('Component 2')
-    ax.set_zlabel('Component 3')
-    ax.set_title(title)
-    targets = np.unique(y)
-    for target in targets:
-        indices = np.where(y == target)
-        ax.scatter(X[indices, 0], X[indices, 1], X[indices, 2], label=target)
-    ax.legend()
-    plt.show()
+# # 将降维结果可视化为3D图形
+# def plot_3d(X, y, title):
+#     fig = plt.figure(figsize=(8, 8))
+#     ax = fig.add_subplot(1, 1, 1, projection='3d')
+#     # ax.set_xlabel('Component 1')
+#     # ax.set_ylabel('Component 2')
+#     # ax.set_zlabel('Component 3')
+#     ax.set_title(title)
+#     targets = np.unique(y)
+#     for target in targets:
+#         indices = np.where(y == target)
+#         ax.scatter(X[indices, 0], X[indices, 1], X[indices, 2], label=target)
+#     ax.legend()
+#     plt.show()
 
-# 可视化2D降维结果
-plot_2d(img_pca, labels, 'PCA (2D)')
-plot_2d(img_tsne, labels, 't-SNE (2D)')
+# # 可视化2D降维结果
+# plot_2d(img_pca, labels, 'PCA (2D)')
+# plot_2d(img_tsne, labels, 't-SNE (2D)')
 
-# 可视化3D降维结果
-plot_3d(img_pca_3d, labels, 'PCA (3D)')
-plot_3d(img_tsne_3d, labels, 't-SNE (3D)')
+# # 可视化3D降维结果
+# plot_3d(img_pca_3d, labels, 'PCA (3D)')
+# plot_3d(img_tsne_3d, labels, 't-SNE (3D)')
 
 img = img_vector[0]
 
 # 使用不同的PCA精度进行降维，并展示结果
-for n_components in [2, 5, 10, 20, 50, 100]:
+for n_components in [2, 5, 10]:
     pca_model = PCA(n_components=n_components)
     
     # 使用PCA模型进行降维
-    img_pca = pca_model.fit_transform(img.reshape(1, -1))
+    img_pca = pca_model.transform(img.reshape(1, -1))
     img_reconstructed_pca = pca_model.inverse_transform(img_pca)
-    
-    tsne_model = PCA(n_components=n_components)
-    
-    # 使用t-SNE模型进行降维
-    img_tsne = tsne_model.fit_transform(img.reshape(1, -1))
-    img_reconstructed_tsne = tsne_model.inverse_transform(img_tsne)
+
     
     # 显示原始图像和PCA降维图像
     fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(8, 4))
@@ -139,12 +134,32 @@ for n_components in [2, 5, 10, 20, 50, 100]:
     axes[1].imshow(img_reconstructed_pca.reshape(32, 32, 3))
     axes[1].set_title('PCA Reconstruction (n_components={})'.format(n_components))
     plt.show()
+
+
+# 选择第一张图片进行展示
+img = img_vector[0]
+
+# 指定需要展示的主成分数量
+n_components_list = [2, 5, 10, 20, 50, 100]
+
+# 对于每个主成分数量进行降维，并比较重构效果
+for n_components in n_components_list:
+    # 使用PCA模型进行降维
+    pca_model = PCA(n_components=n_components)
+    img_pca = pca_model.fit_transform(img.reshape(1, -1))
+    img_reconstructed_pca = pca_model.inverse_transform(img_pca)
     
-    # 显示原始图像和t-SNE降维图像
-    fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(8, 4))
+    # 使用t-SNE模型进行降维
+    tsne_model = TSNE(n_components=n_components)
+    img_tsne = tsne_model.fit_transform(img.reshape(1, -1))
+    img_reconstructed_tsne = tsne_model.inverse_transform(img_tsne)
+    
+    # 显示原始图像和降维后的图像
+    fig, axes = plt.subplots(nrows=1, ncols=3, figsize=(12, 4))
     axes[0].imshow(img.reshape(32, 32, 3))
     axes[0].set_title('Original Image')
-    axes[1].imshow(img_reconstructed_tsne.reshape(32, 32, 3))
-    axes[1].set_title('t-SNE Reconstruction (perplexity={}, learning_rate={})'.format(tsne_model.perplexity, tsne_model.learning_rate))
+    axes[1].imshow(img_reconstructed_pca.reshape(32, 32, 3))
+    axes[1].set_title('PCA Reconstruction (n_components={})'.format(n_components))
+    axes[2].imshow(img_reconstructed_tsne.reshape(32, 32, 3))
+    axes[2].set_title('t-SNE Reconstruction (n_components={})'.format(n_components))
     plt.show()
-
