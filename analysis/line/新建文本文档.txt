@@ -1,0 +1,65 @@
+Entity	Layer	Color	Elevation	RefName	Style	Text	ORIG_FID	geometry	x_coordinate	y_coordinate
+Text	PS_HSLtext	2	0	砼  DN400	CDShxStyle	砼  DN400	51418	c(37489596.4803926, 2399263.02844232)	37489596.48	2399263.028
+Text	PS_HSLtext	2	0	砼  DN200	CDShxStyle	砼  DN200	51419	c(37489603.8900662, 2399264.16016775)	37489603.89	2399264.16
+Text	PS_HSLtext	2	0	砼  DN400	CDShxStyle	砼  DN400	51420	c(37489620.433776, 2399278.90621558)	37489620.43	2399278.906
+Text	PS_HSLtext	2	0	砼  DN400	CDShxStyle	砼  DN400	51421	c(37489608.3206168, 2399270.82856234)	37489608.32	2399270.829
+其中df1中的x_coordinate，y_coordinate必然属于且只属于df2中的某一个坐标，但df2中的某一个坐标不一定有对应的x_coordinate，y_coordinate，x_coordinate，y_coordinate的ORIG_FID是唯一的
+
+Entity	Layer	Color	Elevation	RefName	Style	Text	ORIG_FID	geometry	x_coordinate	y_coordinate
+Text	PS_YSLText	120	0	砼  DN200	CDShxStyle	砼  DN200	20913	c(37493455.4599253, 2394677.34035418)	37493455.46	2394677.34
+Text	PS_YSLText	120	0	砼  DN400	CDShxStyle	砼  DN400	20914	c(37493458.8815, 2394651.54504923)	37493458.88	2394651.545
+Text	PS_YSLText	120	0	砼  DN300X200	CDShxStyle	砼  DN300X200	20915	c(37493449.6332465, 2394674.07058118)	37493449.63	2394674.071
+Text	PS_YSLText	120	0	PVC  DN200	CDShxStyle	PVC  DN200	20916	c(37493451.5379044, 2394665.00622391)	37493451.54	2394665.006
+Text	PS_YSLText	120	0	砼  DN300X200	CDShxStyle	砼  DN300X200	20917	c(37493448.3735053, 2394656.395698)	37493448.37	2394656.396
+各自检查x_coordinate列和y_coordinate列的前三位是否全部相同
+
+# 使用groupby和idxmin找到每个ORIG_FID_Shortest中最小距离对应的索引
+min_distance_indices = df.groupby('ORIG_FID_Shortest')['Shortest_Euclidean_Distance'].idxmin()
+
+# 根据索引筛选出最短距离对应的行，并保存到新的DataFrame
+df_shortest = df.loc[min_distance_indices]
+找到每个ORIG_FID_Shortest中距离为0.5对应的索引，根据索引筛选出对应的行，并保存到新的DataFrame
+
+
+import pandas as pd
+import numpy as np
+import os, sys
+os.chdir(sys.path[0])
+
+from sklearn.metrics.pairwise import euclidean_distances
+
+# 找出每一列的'XM', 'YM'对应的距离最短的text
+name = 'HSL'
+
+filename_text = r'{}_text.csv'.format(name)
+filename_new = r'{}_new.csv'.format(name)
+
+df1 = pd.read_csv(filename_text, encoding='gb2312')
+df2 = pd.read_csv(filename_new)
+
+df1['x_coordinate'] = df1['x_coordinate'].astype(str).str[3:].astype(float)
+
+df2['XM'] = df2['XM'].astype(str).str[3:].astype(float)
+
+coordinates_df1 = np.array(df1[['x_coordinate', 'y_coordinate']])
+coordinates_df2 = np.array(df2[['XM', 'YM']])
+
+distances_matrix = np.round(euclidean_distances(coordinates_df1, coordinates_df2), decimals=1)
+
+shortest_distances_indices = [np.where(distances_matrix[:, i] == 0.5)[0] for i in range(distances_matrix.shape[1])]
+
+shortest_distances = distances_matrix[shortest_distances_indices, np.arange(len(df2))]
+
+df2['Shortest_Euclidean_Distance'] = shortest_distances
+
+# 根据索引从df1中获取对应的RefName
+refname_shortest = df1.loc[shortest_distances_indices, 'RefName'].values
+
+ORIG_FID_shortest = df1.loc[shortest_distances_indices, 'ORIG_FID'].values
+# 将RefName作为新列添加到df2中
+df2['RefName_Shortest'] = refname_shortest
+
+df2['ORIG_FID_Shortest'] = ORIG_FID_shortest
+
+# 将更新后的df2保存为CSV文件
+df2.to_csv(r'{}_repate_ID2.csv'.format(name), encoding='gb2312', index=0)

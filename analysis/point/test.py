@@ -6,7 +6,7 @@ import pandas as pd
 result_df = pd.read_csv('result.csv')
 
 # 设置 Pandas 显示选项，禁用科学计数法
-pd.set_option('display.float_format', '{:.2f}'.format)
+pd.set_option('display.float_format', '{:.3f}'.format)
 
 # 提取comparison_result为True的行的索引号
 true_indices = result_df[result_df['comparison_result'] == True].index
