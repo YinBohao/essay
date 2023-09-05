@@ -1,0 +1,18 @@
+检验8月11日前后的数据是否符合正态分布
+filename = r'0711_0825_reverse.csv'
+
+df = pd.read_csv(filename)
+
+# 去除每天内的重复COD数据
+df = df.drop_duplicates(subset=['date', 'COD'])
+
+# 将日期列转换为日期时间类型
+df['date'] = pd.to_datetime(df['date'])
+
+# 创建条件以分割数据
+date_threshold = pd.to_datetime('2023-08-11')
+df_before_aug_11 = df[df['date'] < date_threshold]  # 8月11日之前的数据
+df_after_aug_11 = df[df['date'] >= date_threshold]  # 8月11日之后的数据
+
+data_to_test = df_before_aug_11['COD']
+# data_to_test = df_after_aug_11['COD']
