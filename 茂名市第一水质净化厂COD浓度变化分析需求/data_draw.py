@@ -11,8 +11,11 @@ os.chdir(sys.path[0])
 matplotlib.rc("font", family='Microsoft YaHei')
 matplotlib.use('TkAgg')
 
-filename = r'0711_0825_reverse.csv'
+filename = r'data/0711_0825_reverse.csv'
 df_boxplot = pd.read_csv(filename)
+
+# 去除每天内的重复COD数据
+df_boxplot = df_boxplot.drop_duplicates(subset=['date', 'COD'])
 
 # 绘制图表类型
 # name = 'date'
@@ -82,7 +85,7 @@ plt.yticks(size=font_size)
 plt.ylabel('COD', fontsize=title_size)
 plt.xlabel(name, fontsize=title_size)
 
-plt.savefig(r'figure_' + name, pad_inches = 0.5, dpi =200)
+plt.savefig(r'figure/figure1_' + name + '.png', pad_inches = 0.5, dpi =200)
 
 plt.close()
 
