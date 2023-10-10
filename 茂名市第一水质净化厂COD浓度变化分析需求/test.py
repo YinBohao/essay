@@ -36,15 +36,16 @@ plt.xlabel('COD Values')
 plt.ylabel('Frequency')
 plt.legend()
 
-plt.savefig(r'Histogram_cleaned', pad_inches = 0.5, dpi =200)
-plt.close()
-# plt.show()
+# plt.savefig(r'Histogram_cleaned', pad_inches = 0.5, dpi =200)
+# plt.close()
+plt.show()
 
 # 统计测试 - Mann-Whitney U 测试
 _, p_value_mw = mannwhitneyu(data_before, data_after)
 alpha = 0.05  # 设置显著性水平
 
 print("Mann-Whitney U 测试结果：")
+print(f"Mann-Whitney U P 值: {p_value_mw:.8f}")  # 输出 P 值并保留6位小数
 if p_value_mw < alpha:
     print("8月11日前后的数据在中位数上存在显著差异")
 else:

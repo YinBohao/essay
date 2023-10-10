@@ -78,8 +78,8 @@ plt.title('Histogram of COD Data (After Aug 11)')
 plt.xlabel('COD Values')
 plt.ylabel('Frequency')
 # plt.savefig(r'After_Histogram_cleaned', pad_inches = 0.5, dpi =200)
-# plt.show()
-plt.close()
+plt.show()
+# plt.close()
 
 
 # 正态性检验 - Shapiro-Wilk 测试
